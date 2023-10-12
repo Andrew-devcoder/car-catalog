@@ -4,9 +4,7 @@ import {cars as carsData} from "./cars.data.js"
 import { CreateCarForm } from "./create-car-from/CreateCarForm";
 
 const Home = () => {
-
 const [cars, setCars] = useState(carsData)
-
 	return <div>
 		<h1>
 			Catalog cars
