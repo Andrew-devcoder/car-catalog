@@ -1,24 +1,25 @@
-
-import styles from "./Home.module.css";
-// import supra from "./supra.jpg";
-import {cars} from "./cars.data.js"
+import { useState } from "react";
+import { CarItem } from "./car-item/CarItem";
+import {cars as carsData} from "./cars.data.js"
+import { CreateCarForm } from "./create-car-from/CreateCarForm";
 
 const Home = () => {
+
+const [cars, setCars] = useState(carsData)
+
 	return <div>
 		<h1>
 			Catalog cars
 		</h1>
 
-		<div>
-			{cars.map(car=>(
+		<CreateCarForm setCars={setCars}/>
 
-			<div key={car.id} className={styles.item}>
-					<img src={car.image} alt={car.name} className={styles.image}/>
-					<h2>{car.name}</h2>
-					<p>{car.price}</p>
-					<button>Read more</button>
-				</div>
-			))}
+		<div>
+			{cars.length ? cars.map(car=>(
+				<CarItem key={car.id} car= {car}/>
+			))
+		: <p>not found</p>
+		}
 		</div>
 	</div >
 }

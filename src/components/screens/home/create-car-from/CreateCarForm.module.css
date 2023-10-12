@@ -1,0 +1,26 @@
+.form {
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+
+    & input {
+        margin: 10px 0;
+        padding: 0.6em 1.2em;
+        font-size: 1em;
+        font-weight: 500;
+        outline: none;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        transition: border-color .4s ease;
+
+        &:focus {
+            border-color: aqua;
+        }
+    }
+
+    & button {
+        margin: 10px 0;
+    }
+}
+
