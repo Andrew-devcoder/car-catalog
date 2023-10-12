@@ -8,3 +8,9 @@
     flex-direction: column;
     gap: 10px;
 }
+
+
+
+.image{
+    max-width: 100%;
+}
