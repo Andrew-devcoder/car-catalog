@@ -12,13 +12,12 @@ const Home = () => {
 		<div>
 			{cars.map(car=>(
 
-			<div className={styles.item}>
-				<div key={car.id} className={styles.image} style={{backgroundImage: `url(${car.image})`}}>
+			<div key={car.id} className={styles.item}>
+					<img src={car.image} alt={car.name} className={styles.image}/>
 					<h2>{car.name}</h2>
 					<p>{car.price}</p>
 					<button>Read more</button>
 				</div>
-			</div>
 			))}
 		</div>
 	</div >
