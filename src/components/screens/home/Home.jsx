@@ -1,6 +1,7 @@
 
 import styles from "./Home.module.css";
-import supra from "./supra.jpg";
+// import supra from "./supra.jpg";
+import {cars} from "./cars.data.js"
 
 const Home = () => {
 	return <div>
@@ -9,12 +10,16 @@ const Home = () => {
 		</h1>
 
 		<div>
+			{cars.map(car=>(
+
 			<div className={styles.item}>
-				<img src={supra} alt=''></img>
-				<h2>Car 1</h2>
-				<p>$100 000</p>
-				<button>Read more</button>
+				<div key={car.id} className={styles.image} style={{backgroundImage: `url(${car.image})`}}>
+					<h2>{car.name}</h2>
+					<p>{car.price}</p>
+					<button>Read more</button>
+				</div>
 			</div>
+			))}
 		</div>
 	</div >
 }
